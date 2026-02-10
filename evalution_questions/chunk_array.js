@@ -30,6 +30,21 @@ size will always be greater than 0
 The original array should not be mutated
 
 */
+/* USING SLICE AND REDUCE*/
+
+function chunkArray1(arr, size) {
+  return arr.reduce((result, _, index) => {
+    if (index % size === 0) {
+      result.push(arr.slice(index, index + size));
+    }
+    return result;
+  }, []);
+}
+
+console.log(chunkArray1([1, 2, 3, 4, 5], 2));
+
+
+
 function chunkArray(arr, pageCount) {
   const result = [];
   let temp = [];
