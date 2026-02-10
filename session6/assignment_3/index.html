@@ -1,0 +1,30 @@
+<!--
+Question:
+Create a button with text "Clicks: 0".
+Initialize a variable count = 0.
+On each button click, increment count and update the button text accordingly.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Click Counter</title>
+</head>
+<body>
+
+  <button id="clickBtn">Clicks: 0</button>
+
+  <script>
+    let count = 0;
+
+    const button = document.getElementById("clickBtn");
+
+    button.addEventListener("click", () => {
+      count++;
+      button.textContent = `Clicks: ${count}`;
+    });
+  </script>
+
+</body>
+</html>

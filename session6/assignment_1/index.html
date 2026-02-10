@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Assignment 1</title>
+</head>
+<body>
+
+    <p id="secret-message">Initial Text</p>
+
+    <button onclick="revealSecret()">Click Me</button>
+
+    <script>
+        function revealSecret() {
+            const paragraph = document.getElementById("secret-message");
+            paragraph.textContent = "You found the secret message!";
+        }
+    </script>
+
+</body>
+</html>
+

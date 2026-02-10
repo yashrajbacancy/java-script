@@ -1,0 +1,29 @@
+<!--
+Question:
+Write a function downloadFile(url, callback) that simulates a 3-second delay using setTimeout.
+After the delay, log "Download complete: [url]" and execute the callback function.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Example</title>
+</head>
+<body>
+
+  <script>
+    function downloadFile(url, callback) {
+      setTimeout(() => {
+        console.log(`Download complete: ${url}`);
+        callback();
+      }, 3000);
+    }
+
+    downloadFile("https://example.com/file.zip", () => {
+      console.log("Callback executed after download");
+    });
+  </script>
+
+</body>
+</html>
