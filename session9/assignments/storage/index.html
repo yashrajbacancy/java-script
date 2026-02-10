@@ -1,0 +1,60 @@
+<!-- Create a simple HTML page with:
+One input field (name)
+Two buttons: Save and Load
+On Save:
+Store the value in localStorage
+Store the same value in sessionStorage
+On Load:
+Retrieve and display values from both storages
+Think About:
+What happens on page refresh?
+What happens when the tab is closed?
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage Assignment</title>
+  </head>
+  <body>
+    <input type="text" name="username" id="username" placeholder="Enter Name" />
+
+    <button onclick="saveData()">Save</button>
+    <button onclick="loadData()">Load</button>
+
+    <p id="output"></p>
+
+    <script>
+      function saveData() {
+        const name = document.getElementById("username").value;
+
+        localStorage.setItem("username", name);
+        sessionStorage.setItem("username", name);
+
+        alert("Data Saved Successfully");
+      }
+
+      function loadData() {
+        const localName = localStorage.getItem("username");
+        const sessionName = sessionStorage.getItem("username");
+
+        document.getElementById("output").innerHTML =
+          "Local Storage: " +
+          localName +
+          "<br>" +
+          "Session Storage: " +
+          sessionName;
+      }
+    </script>
+  </body>
+</html>
+
+<!--when page is refreshed this does not end the broeser session.both storage types keep their data.
+
+when tab is closed 
+sesion storage is bound with single browser tab so when tab will closed, session will end and data is removed
+in local storage data is persistent and not affected by tab closing.
+
+-->
